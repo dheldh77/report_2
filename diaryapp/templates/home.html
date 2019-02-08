@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+{% load static %}
+
+<section class="picture">
+    <div class="cont">
+        <div class="content">
+            {% for diary in diarys %}
+            <div id="{{diary.title}}" class="card">
+                <div class="card_sub">
+                    <div class="title">
+                        <img src="{{ diary.image.url }}" alt="">
+                        <h1>{{diary.title}}</h1>
+                    </div>
+                    <div class="img">
+                        <img src="{{ diary.image.url }}" width="300" alt="">
+                    </div>
+                    <div class="text">
+                        <div class="icon">
+                            <div class="front">
+                                <i class="far fa-heart"></i>
+                                <i class="far fa-comment"></i>
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <div class="back">
+                                <i class="far fa-bookmark"></i>
+                            </div>
+                        </div>
+                        <div class="toggle" id="{{diary.id}}1">
+                            <p>{{diary.summary}}..<button data-id="{{diary.id}}" onclick="cust(this)"><i class="fas fa-sort-down"></i></button></p>
+                            
+                        </div>
+                        <div class="toggle" id="{{diary.id}}2" style="display:none;">
+                            <p id="test3">{{diary.description}}<button data-id="{{diary.id}}" onclick="cust2(this)"><i class="fas fa-sort-up"></i></button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="nav">
+            <div class="my">
+                <img src="{% static 'img/my.JPG'%}" alt="">
+                <div class="name">
+                    <h6>멋쟁이사자처럼</h6>
+                    <p>경북대학교운영진</p>
+                </div>
+            </div>
+            <div class="new">
+                <button id="myBtn">new diary</button>
+                <i class="fas fa-angle-double-right"></i>
+                
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <form action="">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
+                            </div>
+                            <div class="modal-body">
+                                <input type="textarea", name='body' autocomplete=off placeholder="내용을 입력하세요" onsubmit="return false;">
+                            </div>
+                            <div class="modal-footer">
+                                <i class="fas fa-angle-double-right"></i>
+                                <input type="submit" value="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="go">
+                <div class="title">
+                    <h1>스토리</h1>
+                    <h2>바로보기</h2>
+                </div>
+                <ul>
+                    {% for diary in diarys %}
+                        <li>
+                            <a href="#{{diary.title}}"><img src="{{diary.image.url}}" alt=""><p>{{diary.title}}</p></a>
+                        </li>    
+                    {% endfor %}
+                </ul>
+            </div>
+            
+        </div>
+    </div> 
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+    function cust(elem){
+        var dataId = $(elem).data("id");
+        dataId_1 = dataId + "1";
+        dataId_2 = dataId + "2";
+        $("#"+dataId_1).css("display","none");
+        $("#"+dataId_2).css("display","flex");
+    }
+
+    function cust2(elem){
+        var dataId = $(elem).data("id");
+        dataId_1 = dataId + "1";
+        dataId_2 = dataId + "2";
+        $("#"+dataId_1).css("display","flex");
+        $("#"+dataId_2).css("display","none");
+    }
+</script>
+
+<script>
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+{% endblock %}
