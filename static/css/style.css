@@ -1,0 +1,493 @@
+body{
+    margin:0;
+}
+
+@media(max-width:767px){
+    header .logo h2{
+        font-size:16px !important;
+    }
+
+    header ul li a{
+        font-size: 12px !important;
+    }
+}
+header{
+    border-bottom:1px solid #ddd;
+    transition:.5s;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 100;
+    background: white;
+    height: 70px;
+}
+
+
+header .header{
+    height: 70px;
+    max-width: 1100px;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header .logo{
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header a:focus{
+    text-decoration: none;
+}
+header .logo img{
+    width: 40px;
+    height: 40px;
+}
+
+header .logo h2{
+    color:#444;
+    margin:0 20px;
+}
+
+header .logo h2 i{
+    padding-right: 20px;
+    margin-right:20px;
+    border-right: 1px solid #444;
+}
+
+
+header .menubar li ul {
+    background: rgba(0, 0,0 , 0.2);
+    display:none;  
+    height:auto;
+    padding:0px;
+    margin:0px;
+    border:0px;
+    position:absolute;
+    width:200px;
+    z-index:200;
+}
+
+header .menubar li:hover ul {
+    transition: .5s;
+    display:block;   
+}
+
+header .menubar li .drop_one{
+    list-style: none;
+    padding:20px 10px;
+}
+        
+
+header .menubar .menu{
+    list-style: none;
+    display: flex;
+}
+
+header .menubar .menu li{
+    margin-left:20px;
+}
+
+header .menubar .menu li a{
+    color:#444;
+    font-family: 'Oswald', sans-serif;
+    transition: .5s;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+header .menubar .menu li a:hover{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c50045;
+    transition: .5s;
+    color: #c50045;
+}
+
+
+.picture{
+    padding-top:50px;
+    background: #eee;
+    /* background: url(../img/bg.jpg); */
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+
+.picture .cont{
+    height: 100vh;
+    padding-top:50px;
+    max-width: 1000px;
+    margin-right:auto;
+    margin-left:auto;
+    display: flex;
+
+}
+.picture .cont .content{
+    overflow-y:auto;
+    overflow-x:hidden;
+    flex:3;
+}
+
+.picture .cont .content::-webkit-scrollbar{
+    display: none;
+}
+
+.picture .cont .nav{
+    flex:1;
+}
+
+.picture .cont .content .card{
+    font-family: 'Noto Serif KR', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:30px 30px;
+}
+
+.picture .cont .content .card .card_sub .title {
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+    display: flex;
+    align-items: center;
+}
+
+.picture .cont .content .card .card_sub .title h1{
+    margin:0;
+    font-size: 16px;
+    margin-left:15px;
+    display: inline-block;
+}
+
+.picture .cont .content .card .title img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+
+.picture .cont .content .card .text{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.picture .cont .content .card .text .icon{
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.picture .cont .content .card .text .icon i{
+    margin-left:10px;
+    margin-right: 10px;
+}
+
+.picture .cont .content .card .text .toggle{
+    display:flex;
+    padding-bottom:30px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.picture .cont .content .card .text .toggle p{
+    display: inline;
+}
+
+.picture .cont .content .card .text .toggle button{
+    border:none;
+    background:transparent;
+}
+
+
+.picture .cont .content .card .card_sub{
+    background:white;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    width:100%;
+}
+
+.picture .cont .content .card .card_sub .img{
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture .cont .content .card .card_sub .img img{
+    width: 100%;
+    height: auto;
+}
+
+.picture .nav{
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    margin-top:150px;
+}
+
+.picture .nav .my{
+    display: flex;
+    align-items: center;
+}
+
+.picture .nav .my img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border:1px solid #ccc;
+}
+
+
+.new{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom:10px;
+}
+.new i{
+    color:#444;
+    margin-top:30px;
+}
+.new #myBtn{
+    font-size: 16px;
+    transition: .5s;
+    letter-spacing: 2px;
+    background:transparent;
+    border:none;
+    border-radius: 5px;
+    padding:5px 0px;
+    padding-right: 30px;
+    padding-left:10px;
+    color:#444;
+    margin-right:5px;
+    margin-top:30px;
+}
+
+.new #myBtn:hover{
+    padding-right:50px;
+    transition: .5s;
+    cursor: pointer;
+}
+.new #myBtn:focus{
+    outline: none;
+}
+
+.modal {
+    ont-family: 'Oswald', sans-serif;
+    display: none; 
+    position: fixed; 
+    z-index: 999; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    position: relative;
+    background-color: rgba(0, 0,0 , 0.4);
+    margin: auto;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 5px;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    border-bottom:1px solid rgba(255,255,255,0.5);
+    padding: 2px 16px;
+    background-color: rgba(0, 0,0 , 0.4);
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    border-top:1px solid rgba(255,255,255,0.5);
+    padding: 2px 16px;
+    background-color: rgba(0, 0,0 , 0.4);
+    color: white;
+}
+
+.modal input{
+    color:white;
+    border:none;
+    background:transparent;
+}
+
+.modal .modal-header input{
+    width: 90%;
+    font-size:20px;
+}
+
+.modal .modal-body input{
+    font-size:16px;
+    width: 100%;
+    height: 500px;
+}
+
+.modal .modal-body input:focus{
+    transition: .5s;
+    background: rgba(0,0,0,0.4);
+    outline: none;
+}
+
+.modal .modal-header{
+    padding:15px 50px;
+}
+
+.modal .modal-body{
+    padding:15px 50px;
+}
+
+.modal .modal-footer{
+    display: flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+.modal .modal-footer input{
+    transition: .5s;
+    font-size:18px;
+    letter-spacing: 2px;
+    padding:15px 50px;
+}
+
+.modal .modal-footer i{
+    margin:0 !important;
+}
+
+.modal .modal-footer input:hover{
+    cursor: pointer;
+    transition: .5s;
+    padding-left:30px;
+}
+
+.picture .nav .my .name{
+    
+    padding-left:20px;
+}
+
+.picture .nav .my h6{
+    color:#aaa;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.picture .nav .my p{
+    color:#444;
+    margin:0;
+    padding:0;
+}
+.picture .nav h2{
+    padding-left: 20px;
+}
+
+.picture .nav p{
+    padding-left:20px;
+    margin-bottom:30px;
+}
+.picture .nav ul{
+    list-style: none;
+    height: 200px;
+    overflow-y:auto;
+    padding-left:20px;
+    margin-bottom:0;
+    margin-top:0;
+}
+
+
+.picture .nav ul li{
+    letter-spacing: 2px;
+}
+.picture .nav ul li i{
+    margin-right: 40px;
+}
+.picture .nav ul li p{
+    font-size: 14px !important;
+    margin:0;
+}
+
+.picture .nav ul li img{
+    border:1px solid #ddd;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.picture .nav ul li a{ 
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color:#444;
+    text-decoration: none;
+}
+
+.picture .nav .go{
+    background: white;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    background:white;
+
+}
+.picture .nav .go .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.picture .nav .go .title h2{
+    color:#ddd;
+    font-size:14px;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.picture .nav .go .title h1{
+    color:#444;
+    font-size:14px;
+    margin-top:20px;
+    margin-bottom:10px;
+}

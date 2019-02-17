@@ -10,11 +10,11 @@
             <div id="{{diary.title}}" class="card">
                 <div class="card_sub">
                     <div class="title">
-                        <img src="{{ diary.image.url }}" alt="">
+                        <img src="{{ diary.file.url }}" alt="">
                         <h1>{{diary.title}}</h1>
                     </div>
                     <div class="img">
-                        <img src="{{ diary.image.url }}" width="300" alt="">
+                        <img src="{{ diary.file.url }}" width="300" alt="">
                     </div>
                     <div class="text">
                         <div class="icon">
@@ -53,10 +53,14 @@
                 
                 <div id="myModal" class="modal">
                     <div class="modal-content">
-                        <form action="">
+                        <form action="{% url 'create' %}" onsubmit="SubmitQ()" enctype='multipart/form-data' method="POST">
+                            {% csrf_token %}
                             <div class="modal-header">
                                 <span class="close">&times;</span>
                                 <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
+                                <div class="file">
+                                    <input type="file" name="file" multiple>   
+                                </div>
                             </div>
                             <div class="modal-body">
                                 <input type="textarea", name='body' autocomplete=off placeholder="내용을 입력하세요" onsubmit="return false;">
@@ -77,7 +81,7 @@
                 <ul>
                     {% for diary in diarys %}
                         <li>
-                            <a href="#{{diary.title}}"><img src="{{diary.image.url}}" alt=""><p>{{diary.title}}</p></a>
+                            <a href="#{{diary.title}}"><img src="{{diary.file.url}}" alt=""><p>{{diary.title}}</p></a>
                         </li>    
                     {% endfor %}
                 </ul>
